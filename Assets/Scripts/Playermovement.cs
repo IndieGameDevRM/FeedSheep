@@ -4,30 +4,57 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Playermovement :editor {
 	Rigidbody player;
+
 	public float speed = 100;
-	public GameObject poper;
+	[SerializeField]
+	private float playermovementtimer=0f;
 	void Start (){
-		poper.SetActive (false);
 		player = GetComponent<Rigidbody> ();
 	}
 	void Update(){
-		
+		moveForward ();
+		moveBackward ();
+
+	}
+	void moveForward(){
 		if (arr [0] == 1) {
-			player.AddForce (0, 0, speed * Time.deltaTime);
+			playermovementtimer += 0.1f;
+			if (playermovementtimer <= 40) {
+				if (turn >= 1) {
+					transform.Rotate (0, 0, 180);
+					turn = 0;
+				}
+
+				player.AddForce (0, 0, speed * Time.deltaTime);
+			}
 		} else {
 			player.AddForce (0, 0, 0);
+			playermovementtimer = 0f;
 		}
 	}
-	void OnCollisionStay(Collision coll) {
-		if (coll.gameObject.tag == "levelup") {
-			arr [0] = 0;
-			StartCoroutine ("waitforsecond");
-			Debug.Log ("SceneLoadedAgain");
-			//SceneManager.LoadScene ("test");
-			poper.SetActive (true);
+	void moveBackward(){
+		if (arr [0] == 1) {
+			playermovementtimer += 0.1f;
+			if (playermovementtimer <= 40) {
+				if (turn >= 1) {
+					transform.Rotate (0, 0, 180);
+					turn = 0;
+				}
+
+				player.AddForce (0, 0, speed * Time.deltaTime);
+			}
+		} else {
+			player.AddForce (0, 0, 0);
+			playermovementtimer = 0f;
+		}
+		if (arr [1] == 1) {
+			if (turn < 1) {
+				transform.Rotate(0, 0, 180);
+
+			}
+			player.AddForce (0, 0, -speed * Time.deltaTime);
+			turn++;
 		}
 	}
-	IEnumerator waitforsecond(){
-		yield return new WaitForSeconds (3.0f);
-	}
+
 }
