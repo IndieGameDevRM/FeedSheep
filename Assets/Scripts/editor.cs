@@ -18,9 +18,9 @@ public class editor : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
-			case "move10":
+		case "move10":
 				arr [0] = 1;
-				GameObject Forward =Instantiate (blocks [0], parent.transform)as GameObject;
+				GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 				break;
 			case "Backward":
 				arr [1] = 1;	

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Playermovement :editor {
 	Rigidbody player;
 	public float speed = 100;
@@ -12,10 +13,10 @@ public class Playermovement :editor {
 		player = GetComponent<Rigidbody> ();
 	}
 	void Update(){
-			moveForward ();
-			moveBackward ();
+		//	moveForward ();
+		//	moveBackward ();
 	}
-	void moveForward(){
+	public void moveForward(){
 		if (arr [0] == 1) {
 				if (turn >= 1) {
 					transform.Rotate (0, 0, 180);
@@ -23,7 +24,7 @@ public class Playermovement :editor {
 				}player.AddForce (0, 0, speed * Time.deltaTime);
 			}
 	}
-	void moveBackward(){
+	public void moveBackward(){
 		if (arr [1] == 1) {
 			if (turn < 1) {
 				transform.Rotate(0, 0, 180);

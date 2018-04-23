@@ -619,7 +619,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1796292487}
   m_Father: {fileID: 443303259}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9828,6 +9829,7 @@ MonoBehaviour:
   blocks: []
   parent: {fileID: 0}
   turn: 0
+  DestroyGameObject: {fileID: 1676050155}
   poper: {fileID: 1621554491}
 --- !u!1 &1555924642
 GameObject:
@@ -11378,7 +11380,7 @@ GameObject:
   - component: {fileID: 1796292487}
   - component: {fileID: 1796292486}
   m_Layer: 0
-  m_Name: StoringInfoAboutNeighbour
+  m_Name: InfoAboutNeighbour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11392,21 +11394,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1796292485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6002f7d090c3c4f9aad116d0042b6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d7fe35d2e55ff546b17ac1d4d78606f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CodeSection: {fileID: 1676050156}
 --- !u!4 &1796292487
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1796292485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 472.49207, y: 30.08118, z: -8.520065}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 418.3526, y: -508.84775, z: -15.9751215}
+  m_LocalScale: {x: 1.8749999, y: 1.8749999, z: 1.8749999}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 86734927}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798041852
 GameObject:
