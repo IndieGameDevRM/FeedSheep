@@ -19,11 +19,11 @@ public class editor : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
 		case "move10":
-				arr [0] = 1;
+			arr [0] = 1;
 				GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 				break;
-			case "Backward":
-				arr [1] = 1;	
+		case "Backward":
+			arr [1] = 1;	
 				GameObject backward = Instantiate (blocks [1], parent.transform)as GameObject;
 				break;
 		}
@@ -35,6 +35,7 @@ public class editor : MonoBehaviour {
 			break;
 		case "Backward":
 			arr [1] = 1;	
+			print ("from editor movefor");
 			break;
 			}
 	}

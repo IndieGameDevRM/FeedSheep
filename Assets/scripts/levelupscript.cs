@@ -12,7 +12,6 @@ public class levelupscript : editor {
 	}
 	void OnCollisionStay(Collision col){
 		if (col.gameObject.tag == "sheep") {
-
 			poper.SetActive (true);
 			for (int i=0;i<=DestroyGameObject.transform.childCount-1;i++) {
 				Destroy(DestroyGameObject.transform.GetChild(i).gameObject);

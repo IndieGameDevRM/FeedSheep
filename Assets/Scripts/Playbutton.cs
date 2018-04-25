@@ -28,7 +28,7 @@ public class Playbutton : MonoBehaviour {
 	}
 	public void playButton(){
 		enableallComponent ();
-
+		
 		GameObjectTodisable [3].SetActive (false);
 		GameObjectTodisable [4].SetActive (false);
 	}

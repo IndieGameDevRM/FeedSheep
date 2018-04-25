@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InfoAboutNeighbourBlock : Playermovement {
-	//Vector2 direction;
 	[SerializeField]
 	Transform CodeSection;
 	int count;
-	bool IsForward,IsBackward;
-	void Start(){
-		StartCoroutine(WaitForSecond(0.5f));
+	bool start=false;
+	void Start (){
+		StartCoroutine (WaitForSecond (0.5f));
+	}
+	void OnEnable(){
+		StartCoroutine (WaitForSecond (0.5f));
 	}
 	IEnumerator WaitForSecond(float time){
-		print ("Yes");
 		yield return new WaitForSeconds (time);
 		if (CodeSection.childCount == 0) {
 		} else {
@@ -21,7 +22,6 @@ public class InfoAboutNeighbourBlock : Playermovement {
 				if (child.name == "Forwardchild(Clone)") {
 					count = 0;
 					InvokeRepeating ("Forward",0.5f, 0.01f);
-
 				}
 				else if(child.name=="backchild(Clone)"){
 					count = 0;
