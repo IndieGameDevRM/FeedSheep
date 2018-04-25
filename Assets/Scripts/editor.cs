@@ -8,7 +8,7 @@ public class editor : MonoBehaviour {
 	[SerializeField]
 	GameObject parent;
 	public static int[] arr=new int[10];
-	public int turn=0;
+	public int turn=1;
 	int once=0;
 	void Start(){
 		for (int i = 0;i< arr.Length; i++) {
