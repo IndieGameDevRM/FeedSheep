@@ -7,10 +7,12 @@ public class InfoAboutNeighbourBlock : Playermovement {
 	Transform CodeSection;
 	int count;
 	bool start=false;
+	Vector2 direction;
 	void Start (){
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	void OnEnable(){
+		
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	IEnumerator WaitForSecond(float time){
@@ -41,7 +43,6 @@ public class InfoAboutNeighbourBlock : Playermovement {
 		}
 	}
 	void Backward(){
-		
 		moveBackward ();
 		count++;
 		if (count > 600) {

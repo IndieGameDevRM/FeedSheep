@@ -8,6 +8,8 @@ public class Playbutton : MonoBehaviour {
 	GameObject[] GameObjectTodisable;
 	//[SerializeField]
 	//Behaviour Component;
+	public bool IsPlay=false;
+
 	public void disableComponent (){
 
 		for (int i = 0; i < GameObjectTodisable.Length; i++) {
@@ -21,18 +23,22 @@ public class Playbutton : MonoBehaviour {
 		}
 		//Component.enabled = true;
 	}
+		
 	void Start(){
+		IsPlay = false;
 		disableComponent ();
 		//Component.enabled = false;
 		GameObjectTodisable [3].SetActive (true);
 	}
 	public void playButton(){
+		IsPlay = true;
 		enableallComponent ();
 		
 		GameObjectTodisable [3].SetActive (false);
 		GameObjectTodisable [4].SetActive (false);
 	}
 	public void stopButton(){
+		IsPlay = false;
 		disableComponent ();
 		GameObjectTodisable [3].SetActive (true);
 

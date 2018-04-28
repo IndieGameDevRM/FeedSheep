@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class editor : MonoBehaviour {
-	[SerializeField]
-	GameObject[] blocks;
-	[SerializeField]
-	GameObject parent;
 	public static int[] arr=new int[10];
 	public int turn=1;
+	int line=0;
+	string CodeName="";
 	int once=0;
+	public GameObject[] blocks;
+	public GameObject parent;
 	void Start(){
 		for (int i = 0;i< arr.Length; i++) {
 			arr [i] = 0;
@@ -19,12 +19,13 @@ public class editor : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
 		case "move10":
+			Debug.Log ("move10steps");
 			arr [0] = 1;
-				GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
+			GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 				break;
 		case "Backward":
 			arr [1] = 1;	
-				GameObject backward = Instantiate (blocks [1], parent.transform)as GameObject;
+			GameObject Backward = Instantiate (blocks [1], parent.transform)as GameObject;
 				break;
 		}
 	}
@@ -35,7 +36,6 @@ public class editor : MonoBehaviour {
 			break;
 		case "Backward":
 			arr [1] = 1;	
-			print ("from editor movefor");
 			break;
 			}
 	}
@@ -51,7 +51,6 @@ public class editor : MonoBehaviour {
 			break;
 		}
 	}
-
 	public int[] getarray(){
 		return arr;
 	}

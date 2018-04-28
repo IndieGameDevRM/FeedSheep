@@ -14,13 +14,7 @@ public class Playermovement :editor {
 	void Start (){
 		player = GetComponent<Rigidbody> ();
 	}
-	void Update(){
-					
-			//moveForward ();
-			//moveBackward ();
-	}
 	public void moveForward(){
-		print ("YesMovingForward");
 			if (arr [0] == 1) {
 				if (turn >= 1) {
 					transform.Rotate (0, 0, 180);
@@ -30,7 +24,6 @@ public class Playermovement :editor {
 		}
 	}
 	public void moveBackward(){
-		print ("Ya moving backward");
 		if (arr [1] == 1) {
 			if (turn < 1) {
 				transform.Rotate(0, 0, 180);
