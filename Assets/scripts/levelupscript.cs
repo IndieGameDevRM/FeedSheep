@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class levelupscript : editor {
+public class levelupscript : linecollider {
 
 	[SerializeField]
 	GameObject DestroyGameObject;

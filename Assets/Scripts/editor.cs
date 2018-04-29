@@ -14,7 +14,9 @@ public class editor : MonoBehaviour {
 		for (int i = 0;i< arr.Length; i++) {
 			arr [i] = 0;
 			once=0;
+
 		}
+
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
