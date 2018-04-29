@@ -10,7 +10,7 @@ public class Playermovement :linecollider {
 	[SerializeField]
 	GameObject Codequeue;
 
-	int _timer=0,_secondtimer=0;
+	int _timer=0,_secondtimer=0,turn=1;
 	void Start (){
 		player = GetComponent<Rigidbody> ();
 	}
@@ -18,6 +18,7 @@ public class Playermovement :linecollider {
 		//transform.Rotate(0, 0, 1);
 	}
 	public void moveForward(){
+		
 			if (arr [0] == 1) {
 				/*if (turn >= 1) {
 					transform.Rotate (0, 0, 180);
@@ -32,7 +33,7 @@ public class Playermovement :linecollider {
 				transform.Rotate(0, 0, 180);
 			}*/
 			player.AddForce (0, 0, -speed * Time.deltaTime);
-			turn++;
+		//	turn++;
 		}
 	}
 

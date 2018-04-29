@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class linecollider : MonoBehaviour {
 	public static int[] arr=new int[10];
-	public int turn=1;
+	int turn=0;
 	[SerializeField]
 	int line=0;
 	[SerializeField]
 	GameObject play;
 	public GameObject[] blocks;
 	public GameObject parent;
-	public GameObject sheep;
+	bool action=false;
 	void Start(){
-		sheep = GameObject.Find ("Sheep");
 		play = GameObject.Find ("play");
 		//blocks [0] = GameObject.FindGameObjectWithTag ("move10");
 		//blocks [1] = GameObject.FindGameObjectWithTag("Backward");
@@ -34,24 +33,16 @@ public class linecollider : MonoBehaviour {
 			arr [0] = 1;
 			GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 			Forward.gameObject.tag = line.ToString ();
-			if (turn == 0) {
-				sheep.transform.Rotate(0, 0, 180);
-				turn = 1;
-			}
 			break;
 		case "Backward":
 			arr [1] = 1;	
 			GameObject Backward = Instantiate (blocks [1], parent.transform)as GameObject;
 			Backward.gameObject.tag = line.ToString ();
-			turn=0;
-			if (turn < 1) {
-				
-				sheep.transform.Rotate(0, 0, 180);
-			}
 			break;
 		}
 
-	}void OnCollisionStay2D(Collision2D col){
+	}/*
+	void OnCollisionStay2D(Collision2D col){
 		switch (col.gameObject.tag) {
 		case "move10":
 			arr [0] = 1;
@@ -60,7 +51,7 @@ public class linecollider : MonoBehaviour {
 			arr [1] = 1;
 			break;
 		}
-	}
+	}*/
 	void OnCollisionExit2D(Collision2D col){
 		//start = 0;
 		switch (col.gameObject.tag) {
