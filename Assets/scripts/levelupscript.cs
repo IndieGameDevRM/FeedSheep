@@ -7,6 +7,7 @@ public class levelupscript : linecollider {
 	[SerializeField]
 	GameObject DestroyGameObject;
 	public GameObject poper;
+	int count=0;
 	void Start () {
 		poper.SetActive (false);
 	}
@@ -20,5 +21,9 @@ public class levelupscript : linecollider {
 			this.gameObject.SetActive (false);
 
 		}
+
+	}
+	void OnCollisionEnter(Collision col){
+		
 	}
 }

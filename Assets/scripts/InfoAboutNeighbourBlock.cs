@@ -23,7 +23,7 @@ public class InfoAboutNeighbourBlock : Playermovement {
 		//foreach (Transform child in CodeSection)
 		for(int i=0;i<CodeSection.childCount;i++){
 				//	Debug.Log (child.name);
-			Debug.Log (number);
+			//Debug.Log (number);
 			GameObject obj = GameObject.FindGameObjectWithTag (number.ToString());
 			Debug.Log (obj.name);
 			//print ("childname:" + child.name + ",tag:" + child.tag.ToString());

@@ -17,6 +17,11 @@ TagManager:
   - 7
   - 8
   - 9
+  - turn
+  - levelup
+  - Foodtype1
+  - checkpoint1
+  - ForLoop
   layers:
   - Default
   - TransparentFX
