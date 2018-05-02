@@ -13,19 +13,20 @@ public class InfoAboutNeighbourBlock : Playermovement {
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	void OnEnable(){
-		
+       
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	IEnumerator WaitForSecond(float time){
 		yield return new WaitForSeconds (time);
 		if (CodeSection.childCount == 0) {
-		} 
-		//foreach (Transform child in CodeSection)
+		}
+        //foreach (Transform child in CodeSection)
+        Debug.Log(CodeSection.childCount);
 		for(int i=0;i<CodeSection.childCount;i++){
 				//	Debug.Log (child.name);
 			//Debug.Log (number);
 			GameObject obj = GameObject.FindGameObjectWithTag (number.ToString());
-			Debug.Log (obj.name);
+			//Debug.Log (obj.tag.ToString());
 			//print ("childname:" + child.name + ",tag:" + child.tag.ToString());
 						if (obj.name == "Forwardchild(Clone)") {
 							count = 0;
@@ -34,7 +35,13 @@ public class InfoAboutNeighbourBlock : Playermovement {
 							count = 0;
 							InvokeRepeating ("Backward", 0.5f, 0.01f);
 
-						}
+                        }
+                        else if (obj.name == "Turn(Clone)")
+                        {
+                            Debug.Log("Turn");
+                            count = 0;
+                            Turnleft();
+                        }
 					yield return new WaitForSeconds (10.0f);
 			number++;
 					
@@ -54,6 +61,6 @@ public class InfoAboutNeighbourBlock : Playermovement {
 			CancelInvoke (methodName:"Backward");
 		}
 	}
-
+  
 }
 

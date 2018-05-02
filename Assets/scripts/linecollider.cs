@@ -23,11 +23,6 @@ public class linecollider : MonoBehaviour {
 	
 	}
 	void OnCollisionEnter2D(Collision2D col){
-		/*if (start == 0) {
-			Debug.Log (col.gameObject.name);
-			Debug.Log (line);
-			start = 1;
-		}*/
 		switch(col.gameObject.tag){
 		case "move10":
 			arr [0] = 1;
@@ -39,19 +34,14 @@ public class linecollider : MonoBehaviour {
 			GameObject Backward = Instantiate (blocks [1], parent.transform)as GameObject;
 			Backward.gameObject.tag = line.ToString ();
 			break;
-		}
+        case "turn":
+            arr[2]= 1;
+            GameObject Turn = Instantiate(blocks[2], parent.transform) as GameObject;
+            Turn.gameObject.tag = line.ToString();
+            break;
+        }
 
-	}/*
-	void OnCollisionStay2D(Collision2D col){
-		switch (col.gameObject.tag) {
-		case "move10":
-			arr [0] = 1;
-			break;
-		case "Backward":
-			arr [1] = 1;
-			break;
-		}
-	}*/
+	}
 	void OnCollisionExit2D(Collision2D col){
 		//start = 0;
 		switch (col.gameObject.tag) {
@@ -62,7 +52,10 @@ public class linecollider : MonoBehaviour {
 			arr [1] = 0;	
 			turn = 0;
 			break;
-		}
+        case "turn":
+            arr[2] = 0;
+            break;
+        }
 	}
 
 }

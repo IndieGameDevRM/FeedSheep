@@ -17,3 +17,7 @@ Platform is using: Unity
 
 
 language: c#  
+
+Modeling Software:Blender
+
+Software For 2D Sprite:Gimp

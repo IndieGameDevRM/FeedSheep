@@ -36,5 +36,9 @@ public class Playermovement :linecollider {
 		//	turn++;
 		}
 	}
+    public void Turnleft()
+    {
+        player.transform.Rotate(0,0,-90);
+    }
 
 }
