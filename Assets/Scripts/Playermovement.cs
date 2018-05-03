@@ -7,9 +7,7 @@ public class Playermovement :linecollider {
 	//[SerializeField]
 	public Rigidbody player;
 	public float speed = 100;
-	[SerializeField]
-	GameObject Codequeue;
-
+	
 	int _timer=0,_secondtimer=0,turn=1;
 	void Start (){
 		player = GetComponent<Rigidbody> ();

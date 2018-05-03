@@ -3921,7 +3921,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   player: {fileID: 751265231}
   speed: 200
-  Codequeue: {fileID: 0}
 --- !u!65 &751265230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9857,6 +9856,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1626417333}
+    - target: {fileID: 1667525814039092, guid: 07c163d0de4d78346b8375809530f63b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114263273456906000, guid: 07c163d0de4d78346b8375809530f63b,
+        type: 2}
+      propertyPath: IsPlay
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07c163d0de4d78346b8375809530f63b, type: 2}
   m_IsPrefabParent: 0

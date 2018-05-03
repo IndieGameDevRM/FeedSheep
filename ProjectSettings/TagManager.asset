@@ -22,6 +22,7 @@ TagManager:
   - Foodtype1
   - checkpoint1
   - ForLoop
+  - repeat4
   layers:
   - Default
   - TransparentFX

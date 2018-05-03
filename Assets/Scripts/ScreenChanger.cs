@@ -18,7 +18,7 @@ public class ScreenChanger : Playbutton {
 		cam[0].SetActive(false);
 		cam [1].SetActive (true);
 		sheep.transform.position = spawingpoint[0].transform.transform.position;
-		obj [0].transform.position = spawingpoint [1].transform.position;
+		//obj [0].transform.position = spawingpoint [1].transform.position;
 		poper.SetActive (false);
 		playButton ();
 		DisableBlocks();

@@ -39,9 +39,15 @@ public class linecollider : MonoBehaviour {
             GameObject Turn = Instantiate(blocks[2], parent.transform) as GameObject;
             Turn.gameObject.tag = line.ToString();
             break;
+        case "repeat4":
+            arr[3] = 1;
+            GameObject Repeat = Instantiate(blocks[3], parent.transform) as GameObject;
+            Repeat.gameObject.tag = line.ToString();
+            break;
+
         }
 
-	}
+    }
 	void OnCollisionExit2D(Collision2D col){
 		//start = 0;
 		switch (col.gameObject.tag) {
@@ -54,6 +60,9 @@ public class linecollider : MonoBehaviour {
 			break;
         case "turn":
             arr[2] = 0;
+            break;
+        case "repeat4":
+            arr[3] = 0;
             break;
         }
 	}

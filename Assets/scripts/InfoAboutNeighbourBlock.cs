@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class InfoAboutNeighbourBlock : Playermovement {
 	bool start=false;
 	Vector2 direction;
 	int line=0;
+
+
+    //loop counter
+    int loopcounter=0;
 	void Start (){
 		StartCoroutine (WaitForSecond (0.5f));
 	}
@@ -23,28 +28,43 @@ public class InfoAboutNeighbourBlock : Playermovement {
         //foreach (Transform child in CodeSection)
         Debug.Log(CodeSection.childCount);
 		for(int i=0;i<CodeSection.childCount;i++){
-				//	Debug.Log (child.name);
-			//Debug.Log (number);
-			GameObject obj = GameObject.FindGameObjectWithTag (number.ToString());
-			//Debug.Log (obj.tag.ToString());
-			//print ("childname:" + child.name + ",tag:" + child.tag.ToString());
-						if (obj.name == "Forwardchild(Clone)") {
-							count = 0;
-							InvokeRepeating ("Forward", 0.5f, 0.01f);
-						} else if (obj.name == "backchild(Clone)") {
-							count = 0;
-							InvokeRepeating ("Backward", 0.5f, 0.01f);
 
-                        }
-                        else if (obj.name == "Turn(Clone)")
-                        {
-                            Debug.Log("Turn");
-                            count = 0;
-                            Turnleft();
-                        }
-					yield return new WaitForSeconds (10.0f);
-			number++;
-					
+            //Debug.Log (child.name);
+            print("number;"+number);
+            try
+            {
+                GameObject obj = GameObject.FindGameObjectWithTag(number.ToString());
+                Debug.Log(obj.name.ToString());
+                //print ("childname:" + obj.name + ",tag:" + obj.tag.ToString());
+                if (obj.name == "Forwardchild(Clone)")
+                {
+                    count = 0;
+                    InvokeRepeating("Forward", 0.5f, 0.01f);
+                }
+                else if (obj.name == "backchild(Clone)")
+                {
+                    count = 0;
+                    InvokeRepeating("Backward", 0.5f, 0.01f);
+
+                }
+                else if (obj.name == "Turn(Clone)")
+                {
+                    //Debug.Log("Turn");
+                    Turnleft();
+                }else if(obj.name == "Repeat(Clone)")
+                {
+                    Debug.Log("Loop");
+                    //i = line;
+                    //loopcounter++;
+                }
+            }
+            catch(NullReferenceException e)
+            {
+
+            }
+            yield return new WaitForSeconds(6.0f);
+                number++;
+            
 		}
 	}
 	void Forward(){
@@ -61,6 +81,10 @@ public class InfoAboutNeighbourBlock : Playermovement {
 			CancelInvoke (methodName:"Backward");
 		}
 	}
+    void Turn()
+    {
+        Turnleft();
+    }
   
 }
 
