@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class Playermovement :linecollider {
 	//[SerializeField]
 	public Rigidbody player;
-	public float speed = 100;
-	
+	public static float speed = 100;
+    
+    Vector3 Leftmovemement = new Vector3(0,0, -90);
 	int _timer=0,_secondtimer=0,turn=1;
-	void Start (){
-		player = GetComponent<Rigidbody> ();
+
+    void Start (){
+		//player = GetComponent<Rigidbody> ();
 	}
 	void Update(){
 		//transform.Rotate(0, 0, 1);
@@ -18,25 +20,27 @@ public class Playermovement :linecollider {
 	public void moveForward(){
 		
 			if (arr [0] == 1) {
-				/*if (turn >= 1) {
-					transform.Rotate (0, 0, 180);
-					turn = 0;
-				}*/
-				player.AddForce (0, 0, speed * Time.deltaTime);
-		}
+            /*if (turn >= 1) {
+                transform.Rotate (0, 0, 180);
+                turn = 0;
+            }*/
+            player.AddForce (this.transform.forward*speed*Time.deltaTime);
+            //transform.Translate(Vector3.forward*speed*Time.deltaTime);
+        }
 	}
 	public void moveBackward(){
 		if (arr [1] == 1) {
-			/*if (turn < 1) {
+            /*if (turn < 1) {
 				transform.Rotate(0, 0, 180);
 			}*/
-			player.AddForce (0, 0, -speed * Time.deltaTime);
-		//	turn++;
-		}
+            player.AddForce (-this.transform.forward * speed * Time.deltaTime);
+            //	turn++;
+            //transform.Translate(-Vector3.forward * speed * Time.deltaTime);
+        }
 	}
     public void Turnleft()
     {
-        player.transform.Rotate(0,0,-90);
+       player.transform.Rotate(Vector3.up,-90);
     }
 
 }
