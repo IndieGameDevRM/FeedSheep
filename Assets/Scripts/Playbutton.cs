@@ -35,7 +35,7 @@ public class Playbutton : MonoBehaviour {
 		enableallComponent ();
 		
 		GameObjectTodisable [3].SetActive (false);
-		GameObjectTodisable [4].SetActive (false);
+		//GameObjectTodisable [4].SetActive (false);
 	}
 	public void stopButton(){
 		IsPlay = false;

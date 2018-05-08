@@ -30,101 +30,88 @@ public class InfoAboutNeighbourBlock : Playermovement {
 		if (CodeSection.childCount == 0) {
 		}
         //foreach (Transform child in CodeSection)
-       // Debug.Log(CodeSection.childCount);
-		for(int i=0;i<CodeSection.childCount;){
-
-            //Debug.Log (child.name);
-            //print("number;"+number);
-            try
-            {
-                //print(number);
-                GameObject obj = GameObject.FindGameObjectWithTag(number.ToString());
-              //  print("value of i:" + i);
-               // Debug.Log(obj.name.ToString());
+        // Debug.Log(CodeSection.childCount);
+        for (int i = 1; i < CodeSection.childCount+1;i++)
+        {
+            print("i:" + i);
+            GameObject obj = GameObject.FindGameObjectWithTag(i.ToString());
+                //  print("value of i:" + i);
+                // Debug.Log(obj.name.ToString());
                 //print ("childname:" + obj.name + ",tag:" + obj.tag.ToString());
                 if (obj.name == "Forwardchild(Clone)")
                 {
-                    i++;
-                    //Debug.Log("ya moving forward");
-                    number++;
+                    Debug.Log("ya moving for");
                     count = 0;
                     InvokeRepeating("Forward", 0.5f, 0.01f);
-                }
-                else if (obj.name == "backchild(Clone)")
+                }else if (obj.name == "backchild(Clone)")
                 {
-                    i++;
-                    number++;
+                    Debug.Log("ya moving back");
                     count = 0;
                     InvokeRepeating("Backward", 0.5f, 0.01f);
 
                 }
                 else if (obj.name == "Turn(Clone)")
                 {
-                    i++;
-                  //  Debug.Log("ya turning");
-                    number++;
+                    //  Debug.Log("ya turning");
                     Debug.Log("Turn");
                     //InvokeRepeating("Forward", 0.5f, 0.01f);
                     Turnleft();
-                }else if(obj.name == "Repeat(Clone)")
+                }
+                else if (obj.name == "Repeat(Clone)")
                 {
-                    i++;
-                    number++;
                     //Debug.Log("Loop");
                     wasLoop = true;
                     //i = line;
                     //loopcounter++;
                     whereisloop = Int32.Parse(obj.tag.ToString());
-                    print("loop is at line :" +whereisloop);
+                    print("loop is at line :" + whereisloop);
                 }
 
                 //forloop statement
                 //but it will excuete after end
-                int c = CodeSection.childCount - 1;
-                print("value of I:" + i + "childcount:" +c);
-                if (i == CodeSection.childCount - 1)
-                {
-                    Debug.Log("Yes it was loop");
-                    if (wasLoop == true)
-                    {
-                        i = whereisloop;
-                        number = whereisloop + 1;
-                        loopcounter++;
-                        if (loopcounter >= 4)
-                        {
-                            wasLoop = false;
-                        }
-                      
-                    }
-                }
-            }
-            catch(NullReferenceException e)
-            {
+                // int c = CodeSection.childCount - 1;
+                /* if (i == CodeSection.childCount - 1)
+                 {
+                     Debug.Log("Yes it was loop");
+                     if (wasLoop == true)
+                     {
+                         i = whereisloop;
+                         number = whereisloop + 1;
+                         loopcounter++;
+                         if (loopcounter >= 4)
+                         {
+                             wasLoop = false;
+                         }
 
-            }
+                     }
+                 }*/
+                Debug.Log(number);
+                number++;
             yield return new WaitForSeconds(6.0f);
-               
-            
-		}
-	}
-	void Forward(){
-		moveForward ();
-		count++;
-		if (count > 600) {
-			CancelInvoke (methodName:"Forward");
-		}
-	}
-	void Backward(){
-		moveBackward ();
-		count++;
-		if (count > 600) {
-			CancelInvoke (methodName:"Backward");
-		}
-	}
+        }
+    }
+    void Forward()
+    {
+        moveForward();
+        count++;
+        if (count > 600)
+        {
+            CancelInvoke(methodName: "Forward");
+        }
+    }
+    void Backward()
+    {
+        moveBackward();
+        count++;
+        if (count > 600)
+        {
+            CancelInvoke(methodName: "Backward");
+        }
+    }
     void Turn()
     {
         Turnleft();
     }
-  
+
 }
 

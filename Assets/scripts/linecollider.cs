@@ -25,6 +25,7 @@ public class linecollider : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
 		case "move10":
+
 			arr [0] = 1;
 			GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 			Forward.gameObject.tag = line.ToString ();

@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Playermovement :linecollider {
 	//[SerializeField]
-	public Rigidbody player;
-	public static float speed = 100;
+	public GameObject player;
+	public static float speed = 1;
+    int _timer=0,_secondtimer=0,turn=1;
     
-    Vector3 Leftmovemement = new Vector3(0,0, -90);
-	int _timer=0,_secondtimer=0,turn=1;
-
     void Start (){
+        player = GameObject.Find("Sheep");
 		//player = GetComponent<Rigidbody> ();
 	}
 	void Update(){
@@ -24,23 +23,23 @@ public class Playermovement :linecollider {
                 transform.Rotate (0, 0, 180);
                 turn = 0;
             }*/
-            player.AddForce (this.transform.forward*speed*Time.deltaTime);
-            //transform.Translate(Vector3.forward*speed*Time.deltaTime);
-        }
+           // player.AddForce (this.transform.forward*speed*Time.deltaTime);
+            player.transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+            }
 	}
 	public void moveBackward(){
 		if (arr [1] == 1) {
             /*if (turn < 1) {
 				transform.Rotate(0, 0, 180);
 			}*/
-            player.AddForce (-this.transform.forward * speed * Time.deltaTime);
+            // player.AddForce (-this.transform.forward * speed * Time.deltaTime);
             //	turn++;
-            //transform.Translate(-Vector3.forward * speed * Time.deltaTime);
+            player.transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
-	}
+    }
     public void Turnleft()
     {
-       player.transform.Rotate(Vector3.up,-90);
+       player.transform.Rotate(0,0,90);
     }
 
 }
