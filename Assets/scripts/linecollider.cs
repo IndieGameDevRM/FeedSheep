@@ -5,14 +5,17 @@ using UnityEngine;
 public class linecollider : MonoBehaviour {
 	public static int[] arr=new int[10];
 	int turn=0;
-	[SerializeField]
-	int line=0;
+	public int line=0;
 	[SerializeField]
 	GameObject play;
 	public GameObject[] blocks;
 	public GameObject parent;
 	bool action=false;
-	void Start(){
+    private inputfieldInput inp;
+    public static string Angle="";
+    public static string times = "";
+	void Start() {
+        inp = FindObjectOfType<inputfieldInput>();
 		play = GameObject.Find ("play");
 		//blocks [0] = GameObject.FindGameObjectWithTag ("move10");
 		//blocks [1] = GameObject.FindGameObjectWithTag("Backward");
@@ -36,11 +39,15 @@ public class linecollider : MonoBehaviour {
 			Backward.gameObject.tag = line.ToString ();
 			break;
         case "turn":
+            Angle =inp.Message;
+            Debug.Log("Rotation Angle:" + Angle);
             arr[2]= 1;
             GameObject Turn = Instantiate(blocks[2], parent.transform) as GameObject;
             Turn.gameObject.tag = line.ToString();
             break;
-        case "repeat4":
+        case "ForLoop":
+           // times = inp.Message;
+            //Debug.Log("number of repeated loop:" + times);
             arr[3] = 1;
             GameObject Repeat = Instantiate(blocks[3], parent.transform) as GameObject;
             Repeat.gameObject.tag = line.ToString();
@@ -60,12 +67,18 @@ public class linecollider : MonoBehaviour {
 			turn = 0;
 			break;
         case "turn":
+            Angle = inp.Message;
             arr[2] = 0;
             break;
         case "repeat4":
             arr[3] = 0;
             break;
         }
+  
 	}
+    public string Getangle()
+    {
+        return Angle;
+    }
 
 }

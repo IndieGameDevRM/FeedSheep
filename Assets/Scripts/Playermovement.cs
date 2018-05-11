@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Playermovement :linecollider {
 	//[SerializeField]
 	public GameObject player;
-	public static float speed = 1;
+	public static float speed = 1.2f;
     int _timer=0,_secondtimer=0,turn=1;
-    
+    string turningangle;
     void Start (){
         player = GameObject.Find("Sheep");
 		//player = GetComponent<Rigidbody> ();
@@ -37,9 +37,12 @@ public class Playermovement :linecollider {
             player.transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
     }
-    public void Turnleft()
+    public void TurnPlayer()
     {
-       player.transform.Rotate(0,0,90);
+        turningangle = Getangle();
+        Debug.Log("Turning player to angle:"+turningangle);
+        float a = float.Parse(turningangle);
+       player.transform.Rotate(0,0,-a/2);
     }
-
+    
 }
