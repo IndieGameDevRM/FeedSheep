@@ -27,17 +27,18 @@ public class InfoAboutNeighbourBlock : Playermovement {
 	}
 	IEnumerator WaitForSecond(float time){
 		yield return new WaitForSeconds (time);
+        Debug.Log("TImes:" + times);
 		if (CodeSection.childCount == 0) {
 		}
         //foreach (Transform child in CodeSection)
         // Debug.Log(CodeSection.childCount);
         for (int i = 1; i < CodeSection.childCount+1;i++)
         {
-            print("i:" + i);
+            
             GameObject obj = GameObject.FindGameObjectWithTag(i.ToString());
                 //  print("value of i:" + i);
                 // Debug.Log(obj.name.ToString());
-                //print ("childname:" + obj.name + ",tag:" + obj.tag.ToString());
+                print ("childname:" + obj.name + ",tag:" + obj.tag.ToString());
                 if (obj.name == "Forwardchild(Clone)")
                 {
                     Debug.Log("ya moving for");
@@ -67,25 +68,22 @@ public class InfoAboutNeighbourBlock : Playermovement {
 
                 //forloop statement
                 //but it will excuete after end
-                // int c = CodeSection.childCount - 1;
-                /* if (i == CodeSection.childCount - 1)
+                 if (i == CodeSection.childCount)
                  {
                      Debug.Log("Yes it was loop");
                      if (wasLoop == true)
                      {
                          i = whereisloop;
-                         number = whereisloop + 1;
                          loopcounter++;
-                         if (loopcounter >= 4)
+                    if (loopcounter >= Int32.Parse(times)+1)
                          {
                              wasLoop = false;
                          }
 
                      }
-                 }*/
-                Debug.Log(number);
-                number++;
-            yield return new WaitForSeconds(6.0f);
+                 }
+                 //last time i update here
+            yield return new WaitForSeconds(5.5f);
         }
     }
     void Forward()

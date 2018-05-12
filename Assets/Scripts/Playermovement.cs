@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Playermovement :linecollider {
 	//[SerializeField]
 	public GameObject player;
-	public static float speed = 1.2f;
+	public static float speed = 0.65f;
     int _timer=0,_secondtimer=0,turn=1;
     string turningangle;
     void Start (){

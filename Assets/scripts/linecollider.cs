@@ -12,10 +12,12 @@ public class linecollider : MonoBehaviour {
 	public GameObject parent;
 	bool action=false;
     private inputfieldInput inp;
+    private forloopinput linp;
     public static string Angle="";
     public static string times = "";
 	void Start() {
         inp = FindObjectOfType<inputfieldInput>();
+        linp = FindObjectOfType<forloopinput>();
 		play = GameObject.Find ("play");
 		//blocks [0] = GameObject.FindGameObjectWithTag ("move10");
 		//blocks [1] = GameObject.FindGameObjectWithTag("Backward");
@@ -46,8 +48,8 @@ public class linecollider : MonoBehaviour {
             Turn.gameObject.tag = line.ToString();
             break;
         case "ForLoop":
-           // times = inp.Message;
-            //Debug.Log("number of repeated loop:" + times);
+            times = linp.loopcount;
+            Debug.Log("number of repeated loop:" + times);
             arr[3] = 1;
             GameObject Repeat = Instantiate(blocks[3], parent.transform) as GameObject;
             Repeat.gameObject.tag = line.ToString();
