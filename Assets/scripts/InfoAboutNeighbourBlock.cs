@@ -54,7 +54,7 @@ public class InfoAboutNeighbourBlock : Playermovement {
                 else if (obj.name == "Turn(Clone)")
                 {
                     Debug.Log("Turn");
-                    TurnPlayer();
+                    Invoke("TurnPlayerRotation",0.2f);
                 }
                 else if (obj.name == "RepeatChild(Clone)")
                 {
@@ -104,7 +104,11 @@ public class InfoAboutNeighbourBlock : Playermovement {
             CancelInvoke(methodName: "Backward");
         }
     }
-   
+   void TurnPlayerRotation()
+    {
+        TurnPlayer();
+        CancelInvoke(methodName: "TurnPlayerRotation");
+    }
 
 }
 

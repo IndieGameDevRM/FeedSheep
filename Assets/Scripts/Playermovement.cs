@@ -40,9 +40,10 @@ public class Playermovement :linecollider {
     public void TurnPlayer()
     {
         turningangle = Getangle();
-        Debug.Log("Turning player to angle:"+turningangle);
+
         float a = float.Parse(turningangle);
-       player.transform.Rotate(0,0,-a/2);
+        Debug.Log("a value is:"+a);
+       player.transform.Rotate(0,0,-a);
     }
     
 }
