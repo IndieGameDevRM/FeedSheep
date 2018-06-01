@@ -627,12 +627,16 @@ Prefab:
     - target: {fileID: 114297545118496872, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: level5
+      value: level2
       objectReference: {fileID: 0}
     - target: {fileID: 114188316406481050, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392221594672812, guid: 3dd0fb385f1aaf646863c8f5f4e88c32, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dd0fb385f1aaf646863c8f5f4e88c32, type: 2}
@@ -1196,7 +1200,7 @@ MonoBehaviour:
   GameObjectTodisable:
   - {fileID: 1248560392}
   - {fileID: 1240892715}
-  - {fileID: 0}
+  - {fileID: 2089454197}
   - {fileID: 542393270}
   - {fileID: 1687139006}
   IsPlay: 0
