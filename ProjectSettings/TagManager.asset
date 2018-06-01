@@ -23,6 +23,7 @@ TagManager:
   - checkpoint1
   - ForLoop
   - repeat4
+  - turnRight
   layers:
   - Default
   - TransparentFX

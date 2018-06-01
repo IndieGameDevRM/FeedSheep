@@ -8,7 +8,7 @@ public class Playermovement :linecollider {
 	public GameObject player;
 	public static float speed = 1.2f;
     int _timer=0,_secondtimer=0,turn=1;
-    string turningangle;
+    string turningangle="";
     void Start (){
         player = GameObject.Find("Sheep");
 		//player = GetComponent<Rigidbody> ();
@@ -40,10 +40,16 @@ public class Playermovement :linecollider {
     public void TurnPlayer()
     {
         turningangle = Getangle();
-
         float a = float.Parse(turningangle);
-        Debug.Log("a value is:"+a);
+       // Debug.Log("a value is:"+a);
        player.transform.Rotate(0,0,-a);
+    }
+    public void TurnRight()
+    {
+        turningangle =GetAngleFromRight();
+        float ang = float.Parse(turningangle);
+        Debug.Log("ang Value is:" + turningangle);
+        player.transform.Rotate(0, 0, ang);
     }
     
 }

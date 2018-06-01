@@ -22,7 +22,7 @@ public class InfoAboutNeighbourBlock : Playermovement {
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	void OnEnable(){
-       
+        wasLoop = false;
 		StartCoroutine (WaitForSecond (0.5f));
 	}
 	IEnumerator WaitForSecond(float time){
@@ -39,48 +39,53 @@ public class InfoAboutNeighbourBlock : Playermovement {
                 //  print("value of i:" + i);
                 // Debug.Log(obj.name.ToString());
                 print ("childname:" + obj.name + ",tag:" + obj.tag.ToString());
-                if (obj.name == "Forwardchild(Clone)")
-                {
-                    Debug.Log("ya moving for");
-                    count = 0;
-                    InvokeRepeating("Forward", 0.5f, 0.01f);
-                }else if (obj.name == "backchild(Clone)")
-                {
-                    Debug.Log("ya moving back");
-                    count = 0;
-                    InvokeRepeating("Backward", 0.5f, 0.01f);
+            if (obj.name == "Forwardchild(Clone)")
+            {
+                Debug.Log("ya moving for");
+                count = 0;
+                InvokeRepeating("Forward", 0.5f, 0.01f);
+            }
+            else if (obj.name == "backchild(Clone)")
+            {
+                Debug.Log("ya moving back");
+                count = 0;
+                InvokeRepeating("Backward", 0.5f, 0.01f);
 
-                }
-                else if (obj.name == "Turn(Clone)")
-                {
-                    Debug.Log("Turn");
-                    Invoke("TurnPlayerRotation",0.2f);
-                }
-                else if (obj.name == "RepeatChild(Clone)")
-                {
-                    //Debug.Log("Loop");
-                    wasLoop = true;
-                    //i = line;
-                    //loopcounter++;
-                    whereisloop = Int32.Parse(obj.tag.ToString());
-                    print("loop is at line :" + whereisloop);
-                }
+            }
+            else if (obj.name == "Turn(Clone)")
+            {
+                Debug.Log("Turn");
+                Invoke("TurnPlayerRotation", 0.2f);
+            }
+            else if (obj.name == "RepeatChild(Clone)")
+            {
+                //Debug.Log("Loop");
+                wasLoop = true;
+                //i = line;
+                //loopcounter++;
+                whereisloop = Int32.Parse(obj.tag.ToString());
+                print("loop is at line :" + whereisloop);
+            }
+            else if (obj.name == "TurnRight(Clone)")
+                Invoke(methodName: "TurnPlayerRight", time: 0.2f);
+            {
+            }
 
                 //forloop statement
                 //but it will excuete after end
                  if (i == CodeSection.childCount)
                  {
-                     Debug.Log("Yes it was loop");
+                    
                      if (wasLoop == true)
-                     {
-                         i = whereisloop;
-                         loopcounter++;
-                    if (loopcounter >= Int32.Parse(times)+1)
+                    {
+                        Debug.Log("Yes it was loop");
+                        i = whereisloop;
+                    if (loopcounter >= Int32.Parse(times))
                          {
                              wasLoop = false;
                          }
-
-                     }
+                    loopcounter++;
+                }
                  }
                  //last time i update here
             yield return new WaitForSeconds(5.5f);
@@ -108,6 +113,11 @@ public class InfoAboutNeighbourBlock : Playermovement {
     {
         TurnPlayer();
         CancelInvoke(methodName: "TurnPlayerRotation");
+    }
+    void TurnPlayerRight()
+    {
+        TurnRight();
+        CancelInvoke(methodName: "TurnPlayerRight");
     }
 
 }

@@ -5047,6 +5047,12 @@ Prefab:
       propertyPath: m_Name
       value: Turn
       objectReference: {fileID: 0}
+    - target: {fileID: 114086863824249862, guid: 9d1d5a67225c440478890df43d68341e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff5d41ca9319a1845876b86fd9dc6ff7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d1d5a67225c440478890df43d68341e, type: 2}
   m_IsPrefabParent: 0
