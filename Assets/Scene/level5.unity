@@ -692,7 +692,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7cdc26171518d4cbd6800b1d4a2795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectTodisable: []
+  GameObjectTodisable:
+  - {fileID: 1904244095}
+  - {fileID: 577228760}
+  - {fileID: 1833475794}
+  - {fileID: 627542398}
+  - {fileID: 1904244095}
   IsPlay: 0
   poper: {fileID: 10468693}
 --- !u!1 &492406050
@@ -770,6 +775,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492406050}
   m_Mesh: {fileID: 4300000, guid: f0fd63e1f0ebce943ac2045898614222, type: 3}
+--- !u!1 &577228760 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1522189325465114, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+    type: 2}
+  m_PrefabInternal: {fileID: 18283825}
+--- !u!1 &627542398 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915518815261986, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+    type: 2}
+  m_PrefabInternal: {fileID: 18283825}
 --- !u!1001 &632305358
 Prefab:
   m_ObjectHideFlags: 0
@@ -2287,6 +2302,11 @@ Transform:
   m_Father: {fileID: 1130729124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1833475794 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1407314206805758, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+    type: 2}
+  m_PrefabInternal: {fileID: 18283825}
 --- !u!1 &1888892042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2383,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1904244095 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1930610443900174, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+    type: 2}
+  m_PrefabInternal: {fileID: 18283825}
 --- !u!1001 &2089353232
 Prefab:
   m_ObjectHideFlags: 0
