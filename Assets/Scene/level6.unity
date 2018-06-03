@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5724327, g: 0.392595, b: 0.23458947, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -565,6 +565,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &463037986 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1618239653701756, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+    type: 2}
+  m_PrefabInternal: {fileID: 1618276094}
 --- !u!1 &466287155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,13 +1137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameObjectTodisable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 463037986}
+  - {fileID: 463037986}
+  - {fileID: 463037986}
+  - {fileID: 463037986}
+  - {fileID: 463037986}
   IsPlay: 0
-  poper: {fileID: 0}
+  poper: {fileID: 1713163438}
 --- !u!1001 &987117020
 Prefab:
   m_ObjectHideFlags: 0
@@ -1725,6 +1730,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1377501716}
     m_Modifications:
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224329056009684844, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1880,6 +1890,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: level6
       objectReference: {fileID: 0}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 947458364}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: level6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dd0fb385f1aaf646863c8f5f4e88c32, type: 2}
   m_IsPrefabParent: 0
@@ -1938,7 +1978,7 @@ Light:
     m_Type: 2
     m_Resolution: 3
     m_CustomResolution: -1
-    m_Strength: 0.91
+    m_Strength: 0.93
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1949,7 +1989,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_FalloffTable:

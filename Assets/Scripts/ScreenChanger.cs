@@ -7,9 +7,6 @@ public class ScreenChanger : Playbutton {
 	void Start(){
 		//poper.SetActive (true);
 	}
-	public void ChangeScene(string SceneName){
-		SceneManager.LoadScene (SceneName);
-	}
 	public void Next(string Scene){
 		poper.SetActive (false);
 		playButton ();

@@ -6,7 +6,7 @@ public class Playbutton : MonoBehaviour {
 	
 	[SerializeField]
 	GameObject[] GameObjectTodisable;
-	//[SerializeField]
+    //[SerializeField]
 	//Behaviour Component;
 	public bool IsPlay=false;
 
@@ -41,7 +41,7 @@ public class Playbutton : MonoBehaviour {
 		IsPlay = false;
 		disableComponent ();
 		GameObjectTodisable [3].SetActive (true);
-
+    
 	}
 	public void DisableBlocks(){
 		//Component.enabled = false;
