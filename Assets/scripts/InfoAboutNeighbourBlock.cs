@@ -67,8 +67,12 @@ public class InfoAboutNeighbourBlock : Playermovement {
                 print("loop is at line :" + whereisloop);
             }
             else if (obj.name == "TurnRight(Clone)")
-                Invoke(methodName: "TurnPlayerRight", time: 0.2f);
             {
+                Invoke(methodName: "TurnPlayerRight", time: 0.2f);
+            }
+            else if (obj.name == "jump(Clone)")
+            {
+                Invoke("jmpsheep", 0.2f);
             }
 
                 //forloop statement
@@ -119,6 +123,10 @@ public class InfoAboutNeighbourBlock : Playermovement {
         TurnRight();
         CancelInvoke(methodName: "TurnPlayerRight");
     }
-
+    void jmpsheep()
+    {
+        playerjump();
+        CancelInvoke(methodName: "jmpsheep");
+    }
 }
 

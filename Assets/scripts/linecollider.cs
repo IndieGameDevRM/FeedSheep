@@ -63,6 +63,10 @@ public class linecollider : MonoBehaviour {
              GameObject TurnRight = Instantiate(blocks[4], parent.transform) as GameObject;
              TurnRight.gameObject.tag = line.ToString();
              break;
+        case "jump":
+           GameObject Jump = Instantiate(blocks[5], parent.transform) as GameObject;
+           Jump.gameObject.tag = line.ToString();
+           break;
         }
 
     }

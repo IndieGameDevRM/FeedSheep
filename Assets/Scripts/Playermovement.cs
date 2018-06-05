@@ -9,7 +9,9 @@ public class Playermovement :linecollider {
 	public static float speed = 1.2f;
     int _timer=0,_secondtimer=0,turn=1;
     string turningangle="";
+    private Jump_Animation jmpP;
     void Start (){
+        jmpP = FindObjectOfType<Jump_Animation>();
         player = GameObject.Find("Sheep");
 		//player = GetComponent<Rigidbody> ();
 	}
@@ -50,6 +52,10 @@ public class Playermovement :linecollider {
         float ang = float.Parse(turningangle);
         Debug.Log("ang Value is:" + turningangle);
         player.transform.Rotate(0, 0, ang);
+    }
+    public void playerjump()
+    {
+        //for jump
     }
     
 }
