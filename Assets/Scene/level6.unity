@@ -261,7 +261,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011676345262, guid: 0550765fb22bb954ea0412b7153ff417, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.8199997
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 4000011676345262, guid: 0550765fb22bb954ea0412b7153ff417, type: 2}
       propertyPath: m_LocalRotation.x
@@ -337,7 +337,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12974672, y: 0.10648483, z: 0.14561266}
+  m_Size: {x: 0.12974672, y: 0.10648483, z: -0.34}
   m_Center: {x: 0, y: 0.000000013038516, z: 0.00000011920929}
 --- !u!1001 &304724225
 Prefab:
@@ -2488,7 +2488,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12974672, y: 0.10648483, z: 0.14561266}
+  m_Size: {x: -0.28, y: 0.10648483, z: -0.27}
   m_Center: {x: 0, y: 0.000000013038516, z: 0.00000011920929}
 --- !u!1 &2040143733
 GameObject:

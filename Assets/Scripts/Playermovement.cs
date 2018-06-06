@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class Playermovement :linecollider {
 	//[SerializeField]
 	public GameObject player;
-	public static float speed = 1.2f;
+	public static float speed = 0.63f;
+    //for windows speed must be 1.2f;
     int _timer=0,_secondtimer=0,turn=1;
     string turningangle="";
     private Jump_Animation jmpP;
+    Animator anim;
     void Start (){
+        anim = GetComponent<Animator>();
         jmpP = FindObjectOfType<Jump_Animation>();
         player = GameObject.Find("Sheep");
 		//player = GetComponent<Rigidbody> ();
@@ -55,7 +58,9 @@ public class Playermovement :linecollider {
     }
     public void playerjump()
     {
+        player.GetComponent<Animator>().SetBool("jump", true);
         //for jump
+        
     }
     
 }

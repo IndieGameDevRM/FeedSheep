@@ -632,7 +632,7 @@ Prefab:
     - target: {fileID: 114297545118496872, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: level2
+      value: level5
       objectReference: {fileID: 0}
     - target: {fileID: 114188316406481050, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
@@ -672,6 +672,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114188316406481050, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Next
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dd0fb385f1aaf646863c8f5f4e88c32, type: 2}

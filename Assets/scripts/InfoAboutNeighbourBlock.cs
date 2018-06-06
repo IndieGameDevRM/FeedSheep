@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfoAboutNeighbourBlock : Playermovement {
+public class InfoAboutNeighbourBlock :Playermovement {
 	[SerializeField]
 	Transform CodeSection;
 	int count = 0, number = 1;

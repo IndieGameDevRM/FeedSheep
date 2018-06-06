@@ -24,6 +24,8 @@ TagManager:
   - ForLoop
   - repeat4
   - turnRight
+  - jump
+  - ifchild
   layers:
   - Default
   - TransparentFX
