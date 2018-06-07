@@ -73,6 +73,9 @@ public class InfoAboutNeighbourBlock :Playermovement {
             else if (obj.name == "jump(Clone)")
             {
                 Invoke("jmpsheep", 0.2f);
+            }else if (obj.name == "ifchild(Clone)")
+            {
+                Invoke("jmpsheep", 0.2f);
             }
 
                 //forloop statement

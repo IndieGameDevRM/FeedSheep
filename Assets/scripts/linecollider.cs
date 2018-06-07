@@ -17,10 +17,13 @@ public class linecollider : MonoBehaviour {
     public static string Angle="";
     public static string Angletowardright = "";
     public static string times = "";
-	void Start() {
+    public static string condition = "";
+    private ifinputScript ifinput;
+    void Start() {
         inp = FindObjectOfType<inputfieldInput>();
         linp = FindObjectOfType<forloopinput>();
         inpRight = FindObjectOfType<InputRight>();
+        ifinput = FindObjectOfType<ifinputScript>();
 		play = GameObject.Find ("play");
 		//blocks [0] = GameObject.FindGameObjectWithTag ("move10");
 		//blocks [1] = GameObject.FindGameObjectWithTag("Backward");
@@ -33,39 +36,39 @@ public class linecollider : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		switch(col.gameObject.tag){
 		case "move10":
-
-			arr [0] = 1;
-			GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
+            GameObject Forward = Instantiate (blocks [0], parent.transform)as GameObject;
 			Forward.gameObject.tag = line.ToString ();
 			break;
 		case "Backward":
-			arr [1] = 1;	
 			GameObject Backward = Instantiate (blocks [1], parent.transform)as GameObject;
 			Backward.gameObject.tag = line.ToString ();
 			break;
         case "turn":
             Angle =inp.Message;
             Debug.Log("Rotation Angle:" + Angle);
-            arr[2]= 1;
             GameObject Turn = Instantiate(blocks[2], parent.transform) as GameObject;
             Turn.gameObject.tag = line.ToString();
             break;
         case "ForLoop":
             times = linp.loopcount;
             Debug.Log("number of repeated loop:" + times);
-            arr[3] = 1;
+           
             GameObject Repeat = Instantiate(blocks[3], parent.transform) as GameObject;
             Repeat.gameObject.tag = line.ToString();
             break;
         case "turnRight":
              Angletowardright = inpRight.Message;
-             arr[4] = 1;
              GameObject TurnRight = Instantiate(blocks[4], parent.transform) as GameObject;
              TurnRight.gameObject.tag = line.ToString();
              break;
         case "jump":
            GameObject Jump = Instantiate(blocks[5], parent.transform) as GameObject;
            Jump.gameObject.tag = line.ToString();
+           break;
+        case "ifchild":
+           condition = ifinput.Message;
+           GameObject ifChild = Instantiate(blocks[6], parent.transform) as GameObject;
+           ifChild.gameObject.tag = line.ToString();
            break;
         }
 
@@ -100,5 +103,9 @@ public class linecollider : MonoBehaviour {
     }
     public string GetAngleFromRight() {
         return Angletowardright;
+    }
+    public string GetCodition()
+    {
+        return condition;
     }
 }
