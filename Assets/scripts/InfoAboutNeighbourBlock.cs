@@ -18,6 +18,7 @@ public class InfoAboutNeighbourBlock :Playermovement {
     //For loop parameter
     bool wasLoop = false;
     int whereisloop = 0;
+    int whereisif = 0;
 	void Start (){
 		StartCoroutine (WaitForSecond (0.5f));
 	}
@@ -75,12 +76,27 @@ public class InfoAboutNeighbourBlock :Playermovement {
                 Invoke("jmpsheep", 0.2f);
             }else if (obj.name == "ifchild(Clone)")
             {
-                Invoke("jmpsheep", 0.2f);
+                whereisif = Int32.Parse(obj.tag.ToString());
+                Debug.Log("ifpermission:"+ifpermission);
+                
+                if (ifpermission == false)
+                {//do not excute inside if
+                    while (1==1)
+                    {
+                        i++;
+                        GameObject localobj = GameObject.FindGameObjectWithTag(i.ToString());
+                        if (localobj.name == "endifchild(Clone)")
+                        {
+                            break;
+                        }
+                    }
+                } 
+
             }
 
-                //forloop statement
-                //but it will excuete after end
-                 if (i == CodeSection.childCount)
+            //forloop statement
+            //but it will excuete after end
+            if (i == CodeSection.childCount)
                  {
                     
                      if (wasLoop == true)
@@ -128,7 +144,8 @@ public class InfoAboutNeighbourBlock :Playermovement {
     }
     void jmpsheep()
     {
-        playerjump();
+        Debug.Log("Yes sheep is jumping");
+       // playerjump();
         CancelInvoke(methodName: "jmpsheep");
     }
 }

@@ -12,6 +12,7 @@ public class Playermovement :linecollider {
     string turningangle="";
     private Jump_Animation jmpP;
     Animator anim;
+    public static bool ifpermission = false;
     void Start (){
         anim = GetComponent<Animator>();
         jmpP = FindObjectOfType<Jump_Animation>();
@@ -53,13 +54,18 @@ public class Playermovement :linecollider {
     }
     public void playerjump()
     {
-        string mssg = GetCodition();
-        if (mssg == "iswall")
-        {
-            player.GetComponent<Animator>().SetBool("jump", true);
-        }
+        player.GetComponent<Animator>().SetBool("jump", true);
         //for jump
         
     }
-    
+    public void OnCollisionEnter(Collision collision)
+    {   string mssg = GetCodition();
+       
+        if (collision.gameObject.tag == "iswall")
+        {
+            Debug.Log("yes collision is happing with wall");
+            ifpermission = true;
+        }
+    }
+
 }

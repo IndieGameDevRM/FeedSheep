@@ -26,6 +26,8 @@ TagManager:
   - turnRight
   - jump
   - ifchild
+  - endif
+  - iswall
   layers:
   - Default
   - TransparentFX

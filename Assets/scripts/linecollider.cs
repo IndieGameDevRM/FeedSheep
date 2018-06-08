@@ -70,6 +70,10 @@ public class linecollider : MonoBehaviour {
            GameObject ifChild = Instantiate(blocks[6], parent.transform) as GameObject;
            ifChild.gameObject.tag = line.ToString();
            break;
+        case "endif":
+           GameObject endif = Instantiate(blocks[7], parent.transform) as GameObject;
+           endif.gameObject.tag = line.ToString();
+           break;
         }
 
     }
