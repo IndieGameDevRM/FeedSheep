@@ -714,7 +714,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1297467, y: 0.10648483, z: 0.14561264}
+  m_Size: {x: -0.47, y: 0.10648483, z: 0.14561264}
   m_Center: {x: 0, y: -0.0000000018626451, z: 0}
 --- !u!114 &428659008
 MonoBehaviour:
@@ -885,7 +885,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1569464, y: 0.046352707, z: 0.09013954}
+  m_Size: {x: 0.57, y: 0.046352707, z: 0.09013954}
   m_Center: {x: 0, y: 0.0000000027939677, z: 0}
 --- !u!4 &572651064 stripped
 Transform:
@@ -1552,7 +1552,7 @@ Prefab:
     - target: {fileID: 114297545118496872, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: level8
+      value: level9
       objectReference: {fileID: 0}
     - target: {fileID: 114706523669518522, guid: 3dd0fb385f1aaf646863c8f5f4e88c32,
         type: 2}
